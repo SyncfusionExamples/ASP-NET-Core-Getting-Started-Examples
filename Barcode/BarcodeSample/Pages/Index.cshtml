@@ -1,0 +1,10 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="control_wrapper barcode-control-section">
+    <h2>Barcode Generator</h2>
+    <ejs-barcodegenerator id="container" width="200px" height="150px" type="Codabar" value="123456789" mode="SVG"></ejs-barcodegenerator>
+</div>
