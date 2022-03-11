@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<ejs-grid id="Grid" toolbar="@(new List<string>() { "Add", "Edit", "Delete", "Cancel", "Update" })">
+    <e-data-manager url="/api/Orders" adaptor="WebApiAdaptor" crossdomain="true"></e-data-manager>
+    <e-grid-editSettings allowDeleting="true" allowEditing="true" allowAdding="true"></e-grid-editSettings>
+    <e-grid-columns>
+                <e-grid-column field="OrderId" headerText="Order ID" visible="false" isPrimaryKey="true" width="140"></e-grid-column>
+                <e-grid-column field="CustomerId" headerText="Customer Name" validationRules="@(new { required=true})" width="150"></e-grid-column>
+                <e-grid-column field="Freight" headerText="Freight" validationRules="@(new { required=true})" textAlign="Right" editType="numericedit" format="C2" width="140"></e-grid-column>
+                <e-grid-column field="OrderDate" headerText="Order Date" editType="datetimepickeredit" customFormat="@(new {type = "datetime", format = "M/d/y hh:mm a" })" width="160"></e-grid-column>
+    </e-grid-columns>
+ </ejs-grid>
