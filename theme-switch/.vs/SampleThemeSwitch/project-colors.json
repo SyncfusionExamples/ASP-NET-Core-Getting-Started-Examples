@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "2976eb54-5199-4162-8c85-d9d43490a750": {
+      "ProjectGuid": "2976eb54-5199-4162-8c85-d9d43490a750",
+      "DisplayName": "SampleThemeSwitch",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

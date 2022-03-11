@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<ejs-grid id="Grid" toolbar="@(new List<string>() { "Add", "Edit", "Delete", "Cancel", "Update" })">
+        <e-data-manager url="/Home/UrlDataSource" adaptor="UrlAdaptor" insertUrl="/Home/Insert" removeUrl="/Home/Delete" updateUrl="/Home/Update" crossDomain="true"></e-data-manager>
+        <e-grid-editSettings allowDeleting="true" allowEditing="true" allowAdding="true"></e-grid-editSettings>
+        <e-grid-columns>
+        <e-grid-column field="Id" headerText="Order ID" type="number" visible="false" textAlign="Right" width="120" isPrimaryKey="true"></e-grid-column>
+        <e-grid-column field="Name" headerText="Name" type="string" width="140"></e-grid-column>
+        <e-grid-column field="Author" headerText="Author" type="string" textAlign="Right" width="120"></e-grid-column>
+        <e-grid-column field="Quantity" headerText="Quantity"  type="number" textAlign="Right" width="140"></e-grid-column>
+        <e-grid-column field="Price" headerText="Price"  type="number" textAlign="Right" format="C2" width="120"></e-grid-column>
+        <e-grid-column field="Available" headerText="Available" editType="booleanedit" displayAsCheckBox="true" type="boolean" textAlign="Right" width="140"></e-grid-column>
+    </e-grid-columns>
+ </ejs-grid>
