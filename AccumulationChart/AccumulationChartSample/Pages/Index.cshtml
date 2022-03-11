@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+     List<PieChartData> chartData = new List<PieChartData>
+            {
+
+                new PieChartData { xValue = "Chrome", yValue = 37, text = "37%", fill="#498fff"},
+                new PieChartData { xValue = "UC Browser", yValue = 17, text = "17%", fill="#ffa060"},
+                new PieChartData { xValue = "iPhone", yValue = 19, text = "19%", fill="#ff68b6"},
+                new PieChartData { xValue = "Others", yValue = 4 , text = "4%", fill="#81e2a1"},
+            };
+}
+
+<div class="control_wrapper accumulationChart-control-section">
+    <ejs-accumulationchart id="container" title="Mobile Browser Statistics">
+            <e-accumulationchart-legendsettings visible="false">
+            </e-accumulationchart-legendsettings>
+            <e-accumulation-series-collection>
+                <e-accumulation-series dataSource="@chartData" xName="xValue" yName="yValue" name="Browser">
+                <e-accumulationseries-datalabel name="text" visible="true">
+                  </e-accumulationseries-datalabel>
+                </e-accumulation-series>
+            </e-accumulation-series-collection>
+        </ejs-accumulationchart>
+</div>

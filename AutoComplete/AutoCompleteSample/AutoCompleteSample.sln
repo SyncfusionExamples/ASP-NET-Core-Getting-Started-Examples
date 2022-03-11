@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoCompleteSample", "AutoCompleteSample.csproj", "{4054CFAD-E100-494A-B5B6-3EAE5D9188DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4054CFAD-E100-494A-B5B6-3EAE5D9188DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4054CFAD-E100-494A-B5B6-3EAE5D9188DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4054CFAD-E100-494A-B5B6-3EAE5D9188DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4054CFAD-E100-494A-B5B6-3EAE5D9188DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5383387F-333C-4DAB-A38E-74C2E6507C09}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var data = new string[] { "Badminton", "Basketball", "Cricket", "Football", "Golf", "Gymnastics", "Hockey", "Tennis" };
+    
+}
+
+<div class="control_wrapper AutoComplete-control-section">
+    <ejs-autocomplete id="games" dataSource="@data" placeholder="e.g. Basketball" popupWidth="300px" popupHeight="220px"> </ejs-autocomplete>
+</div>
