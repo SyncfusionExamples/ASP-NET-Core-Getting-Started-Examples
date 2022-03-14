@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    List<DefaultBulletData> bulletData = new List<DefaultBulletData>
+    {
+        new DefaultBulletData { value = 270, target = 250}
+    };    
+}
+
+<div class="text-center">
+    <ejs-bulletchart id="bulletgraph" title="Revenue" minimum="0" maximum="300" interval="50" valueField="value" targetField="target" dataSource="bulletData">
+    </ejs-bulletchart>
+</div>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ButtonGroupSample", "ButtonGroupSample.csproj", "{CE287901-845F-4096-9FE1-A4E6DEECC2B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE287901-845F-4096-9FE1-A4E6DEECC2B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE287901-845F-4096-9FE1-A4E6DEECC2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE287901-845F-4096-9FE1-A4E6DEECC2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE287901-845F-4096-9FE1-A4E6DEECC2B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DB03736-017B-4B1E-A6DD-2FB71EE62C2B}
+	EndGlobalSection
+EndGlobal
