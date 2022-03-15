@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <ejs-circulargauge id="circular" title="speed">
+        <e-circulargauge-axes>
+            <e-circulargauge-axis startAngle="240" endAngle="120" minimum="0" maximum="120" radius="90%">
+            </e-circulargauge-axis>
+        </e-circulargauge-axes>
+</ejs-circulargauge>
+</div>

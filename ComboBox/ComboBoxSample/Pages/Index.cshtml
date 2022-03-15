@@ -1,0 +1,11 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var data = new string[] { "Badminton", "Basketball", "Cricket", "Football", "Golf", "Gymnastics", "Hockey", "Tennis" };
+}
+
+<div class="text-center">
+    <ejs-combobox id="games" allowCustom="true" dataSource="data" placeholder="Select a game" popupHeight="220px">
+    </ejs-combobox>
+</div>
