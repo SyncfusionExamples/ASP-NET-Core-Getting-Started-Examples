@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <ul>
+        <li>
+            <ejs-checkbox id="checked" checked="true" label="Checked State"></ejs-checkbox>
+        </li>
+        <li>
+            <ejs-checkbox id="unchecked" label="Unchecked State"></ejs-checkbox>
+        </li>
+        <li>
+            <ejs-checkbox id="indeterminate" indeterminate="true" label="Intermediate State"></ejs-checkbox>
+        </li>
+    </ul>
+
+    <style>
+        .e-checkbox-wrapper {
+            margin-top: 18px;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+</div>
