@@ -1,0 +1,11 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var minDate= new DateTime(DateTime.Now.Year,DateTime.Now.Month,05);
+    var maxDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 27);
+}
+
+<div class="text-center">
+    <ejs-datepicker id="datepicker" min="minDate" max="maxDate" ></ejs-datepicker>
+</div>

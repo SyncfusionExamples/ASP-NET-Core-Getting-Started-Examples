@@ -1,0 +1,49 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    List<object> menuItems = new List<object>();
+    menuItems.Add(new
+    {
+        text = "Cut"
+    });
+    menuItems.Add(new
+    {
+        text = "Copy"
+    });
+    menuItems.Add(new
+    {
+        text = "Paste"
+    });
+    menuItems.Add(new
+    {
+        separator = true
+    });
+    menuItems.Add(new
+    {
+        text = "Font"
+    });
+    menuItems.Add(new
+    {
+        text = "Paragraph"
+    });
+}
+
+<div class="text-center">
+    <div id="contextmenutarget">Right click/Touch hold to open the ContextMenu </div>
+    <ejs-contextmenu id="contextmenu" target="#contextmenutarget" items="menuItems"></ejs-contextmenu>
+
+    <style>
+
+    #contextmenutarget {
+        border: 1px dashed;
+        height: 250px;
+        padding: 10px;
+        position: relative;
+        text-align: center;
+        color: gray;
+        line-height: 17;
+        font-size: 14px;
+    }
+    </style>
+</div>
