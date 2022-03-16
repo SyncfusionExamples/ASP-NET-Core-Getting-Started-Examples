@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    spacingModel modelValue = new spacingModel();
+    modelValue.cellSpacing = new double[] { 10, 10 };
+}
+
+<div class="text-center">
+    <div class=" control-section">
+    <!--  DashboardLayout element declaration -->
+        <ejs-dashboardlayout id="defaultLayout" columns="6" cellSpacing="modelValue.cellSpacing">
+            <e-dashboardlayout-panels>
+                <e-dashboardlayout-panel sizeX="1" sizeY="1" row="0" col="0" content="<div>0</div>">
+                </e-dashboardlayout-panel>
+                <e-dashboardlayout-panel sizeX="3" sizeY="2" row="0" col="1" content="<div>1</div>">
+                </e-dashboardlayout-panel>
+                <e-dashboardlayout-panel sizeX="1" sizeY="3" row="0" col="4" content="<div>2</div>">
+                </e-dashboardlayout-panel>
+                <e-dashboardlayout-panel sizeX="1" sizeY="1" row="1" col="0" content="<div>3</div>">
+                </e-dashboardlayout-panel>
+                <e-dashboardlayout-panel sizeX="2" sizeY="1" row="2" col="0" content="<div>4</div>">
+                </e-dashboardlayout-panel>
+                <e-dashboardlayout-panel sizeX="1" sizeY="1" row="2" col="2" content="<div>5</div>">
+                </e-dashboardlayout-panel>
+                <e-dashboardlayout-panel sizeX="1" sizeY="1" row="2" col="3" content="<div>6</div>">
+                </e-dashboardlayout-panel>
+            </e-dashboardlayout-panels>
+        </ejs-dashboardlayout>
+        <!-- end of dashboardlayout element -->
+    </div>
+
+    <style>
+        /* DashboardLayout element styles  */
+        #defaultLayout {
+            padding: 10px;
+        }
+
+        #defaultLayout .e-panel .e-panel-container {
+            vertical-align: middle;
+            font-weight: 600;
+            font-size: 20px;
+            text-align: center;
+            line-height: 160px;
+        }
+    </style>
+</div>

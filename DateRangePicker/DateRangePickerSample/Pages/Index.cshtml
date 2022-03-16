@@ -1,0 +1,12 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var startDate = new DateTime(2017, 11, 09);
+    var endDate = new DateTime(2017, 11, 21);
+}
+
+<div class="text-center">
+    <ejs-daterangepicker id="daterange" startdate="startDate" enddate="endDate">
+    </ejs-daterangepicker>
+</div>

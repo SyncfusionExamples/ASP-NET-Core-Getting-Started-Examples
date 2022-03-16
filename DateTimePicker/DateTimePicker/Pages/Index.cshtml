@@ -1,0 +1,12 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var minDate= new DateTime(2019,11,22, 12,00,00);
+    var maxDate = new DateTime(2019, 11, 25, 05, 00, 00);
+}
+
+<div class="text-center">
+    <ejs-datetimepicker id="datetimepicker" min="minDate" max="maxDate">
+    </ejs-datetimepicker>
+</div>
