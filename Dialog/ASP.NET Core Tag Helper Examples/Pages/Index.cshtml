@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var DialogButtons1 = new ButtonModel() { isPrimary = true, cssClass = "e-flat", content = "OK" };
+    var DialogButtons2 = new ButtonModel() { content = "Cancel", cssClass = "e-flat" };
+}
+
+<div class="text-center">
+    <div id='container' style="height:400px;">
+        <ejs-button id="targetButton" content="Open Dialog"></ejs-button>
+        <ejs-dialog id="dialog" header="Dialog" content="This is a Dialog with button and primary button" target="#container" width="250px">
+            <e-dialog-buttons>
+                <e-dialog-dialogbutton buttonModel="DialogButtons1" click="dlgButtonClick"></e-dialog-dialogbutton>
+                <e-dialog-dialogbutton buttonModel="DialogButtons2" click="dlgButtonClick"></e-dialog-dialogbutton>
+            </e-dialog-buttons>
+        </ejs-dialog>
+    </div>
+    <script>
+        window.onload = function () {
+            document.getElementById('targetButton').onclick = function () {
+                var dialog = document.getElementById("dialog").ej2_instances[0];
+                dialog.show();
+            }
+        }
+        function dlgButtonClick() {
+            var dialogObj = document.getElementById('dialog').ej2_instances[0];
+            dialogObj.hide();
+        }
+    </script>
+</div>

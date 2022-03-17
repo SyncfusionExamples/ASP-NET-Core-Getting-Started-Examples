@@ -1,0 +1,11 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    ViewBag.data = new string[] { "Badminton", "Basketball", "Cricket", "Football", "Golf", "Gymnastics", "Hockey", "Tennis" };
+}
+
+<div class="text-center">
+    <ejs-dropdownlist id="games" dataSource="@ViewBag.data" placeholder="Select a game" popupHeight="220px">
+    </ejs-dropdownlist>
+</div>
