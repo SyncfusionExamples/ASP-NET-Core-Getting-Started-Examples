@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    List<object> items = new List<object>();
+    items.Add(new
+    {
+        text = "Cut"
+    });
+    items.Add(new
+    {
+        text = "Copy"
+    });
+    items.Add(new
+    {
+        text = "Paste"
+    });
+}
+
+<div class="text-center">
+    <ejs-dropdownbutton id="element" content="Edit" items="items"></ejs-dropdownbutton>
+</div>
