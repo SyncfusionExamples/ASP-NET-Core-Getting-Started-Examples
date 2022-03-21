@@ -1,0 +1,67 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    ViewBag.elementModel = new { placeholder = "Enter your name" };
+    ViewBag.dateValue = new DateTime(2018, 12, 04);
+    ViewBag.dateModel = new { showTodayButton = true, placeholder = "Select date of birth" };
+    string[] genderData = new string[] { "Male", "Female" };
+    ViewBag.genderModel = new { placeholder = "Select gender", dataSource = genderData };
+    ViewBag.elementValue = "Andrew";
+    ViewBag.dropValue = "Male";
+}
+
+<div class="text-center">
+    <div id='container'>
+        <div class="control-group">
+            <div class="e-heading">
+                <h3> Modify Basic Details </h3>
+            </div>
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td class='left'>
+                        <ejs-inplaceeditor id="element" value="ViewBag.elementValue" model="ViewBag.elementModel" mode='Inline'>
+                        </ejs-inplaceeditor>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DOB</td>
+                    <td class='left'>
+                        <ejs-inplaceeditor id="dateofbirth" type="Date" value="ViewBag.dateValue" model="ViewBag.dateModel" mode='Inline'>
+                        </ejs-inplaceeditor>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td class='left'>
+                        <ejs-inplaceeditor id="gender" type="DropDownList" value="ViewBag.dropValue" model="ViewBag.genderModel" mode='Inline'>
+                        </ejs-inplaceeditor>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <style>
+        #container .control-group {
+            margin-top: 50px;
+        }
+
+            #container .control-group table {
+                margin: auto;
+            }
+
+                #container .control-group table td {
+                    height: 70px;
+                    width: 150px;
+                }
+
+        #container .e-heading {
+            text-align: center;
+        }
+
+        #container .control-group table td {
+            text-align: left;
+        }
+    </style>
+</div>
