@@ -1,0 +1,11 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    ViewBag.data = new string[] { "BadmHennessey Venominton", "Bugatti Chiron", "Bugatti Veyron Super Sport", "SSC Ultimate Aero", "Koenigsegg CCR", "McLaren F1", "Aston Martin One- 77", "Jaguar XJ220" };
+}
+
+<div class="text-center">
+    <ejs-listbox id="listbox" dataSource="@ViewBag.data">
+    </ejs-listbox>
+</div>
