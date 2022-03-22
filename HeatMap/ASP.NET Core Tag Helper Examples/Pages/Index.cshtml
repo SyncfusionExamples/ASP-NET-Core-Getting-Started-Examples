@@ -1,0 +1,50 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var textStyle = new
+    {
+        size= "15px",
+        fontWeight= "500",
+        fontStyle= "Normal",
+        fontFamily= "Segoe UI"
+    };
+    string[] xlabels = new string[12] { "Nancy", "Andrew", "Janet", "Margaret", "Steven", "Michael", "Robert", "Laura", "Anne", "Paul", "Karin", "Mario" };
+    string[] yLabels = new string[6] { "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat" };
+    int[,] data = new int[,]
+    {
+        {73, 39, 26, 39, 94, 0},
+        {93, 58, 53, 38, 26, 68},
+        {99, 28, 22, 4, 66, 90},
+        {14, 26, 97, 69, 69, 3},
+        {7, 46, 47, 47, 88, 6},
+        {41, 55, 73, 23, 3, 79},
+        {56, 69, 21, 86, 3, 33},
+        {45, 7, 53, 81, 95, 79},
+        {60, 77, 74, 68, 88, 51},
+        {25, 25, 10, 12, 78, 14},
+        {25, 56, 55, 58, 12, 82},
+        {74, 33, 88, 23, 86, 59}
+    };
+}
+
+<div class="text-center">
+    <ejs-heatmap id='container' dataSource="data" showTooltip="true">
+      <e-heatmap-titlesettings text="Sales Revenue per Employee (in 1000 US$)" textStyle="textStyle">
+      </e-heatmap-titlesettings>
+      <e-heatmap-xaxis labels="xlabels">
+      </e-heatmap-xaxis>
+      <e-heatmap-yaxis labels="yLabels">
+      </e-heatmap-yaxis>
+      <e-heatmap-palettesettings type="Gradient">
+        <e-palettes>
+        <e-palette value="0" color="#C06C84"></e-palette>
+        <e-palette value="50" color="#6C5B7B"></e-palette>
+        <e-palette value="100" color="#355C7D"></e-palette>
+        </e-palettes>
+        </e-heatmap-palettesettings>
+      <e-heatmap-cellsettings showLabel="true"></e-heatmap-cellsettings>
+      <e-heatmap-legendsettings visible="true" position="Right" showLabel="true" height="150">
+      </e-heatmap-legendsettings>
+    </ejs-heatmap>
+</div>
