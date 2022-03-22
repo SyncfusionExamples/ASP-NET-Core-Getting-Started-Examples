@@ -1,0 +1,16 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    List<ListViewData> data = new List<ListViewData>();
+    data.Add(new ListViewData() { text = "Artwork", id = "01" });
+    data.Add(new ListViewData() { text = "Abstract", id = "02" });
+    data.Add(new ListViewData() { text = "Modern Painting", id = "03" });
+    data.Add(new ListViewData() { text = "Ceramics", id = "04" });
+    data.Add(new ListViewData() { text = "Animation Art", id = "05" });
+    data.Add(new ListViewData() { text = "Oil Painting", id = "06" });
+}
+
+<div class="text-center">
+    <ejs-listview id="list" dataSource="data"></ejs-listview>
+</div>
