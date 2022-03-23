@@ -1,0 +1,16 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <div id='container'>
+        <div class='wrap'>
+            <ejs-numerictextbox id="strict" value="10" validateDecimalOnType="true" decimals="3" format="n3" placeholder="ValidateDecimalOnType enabled" floatLabelType="Auto"></ejs-numerictextbox>
+        </div>
+        <div class='wrap'>
+            <ejs-numerictextbox id="allow" value="10" decimals="3" format="n3" placeholder="ValidateDecimalOnType disabled" floatLabelType="Auto"></ejs-numerictextbox>
+        </div>
+    </div>
+</div>
