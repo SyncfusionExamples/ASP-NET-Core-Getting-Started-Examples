@@ -1,0 +1,10 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    ViewBag.data = new string[] { "Badminton", "Basketball", "Cricket", "Football", "Golf", "Gymnastics", "Hockey", "Tennis" };
+}
+
+<div class="text-center">
+    <ejs-multiselect id="games" dataSource="@ViewBag.data" popupHeight="220px" popupWidth="300px" placeholder="Favorite Sports"></ejs-multiselect>
+</div>
