@@ -3,6 +3,7 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    List<string> values = new List<string> { "Mr.", "Mrs." };
     QueryBuilderRule rule = new QueryBuilderRule()
     {
         Condition = "and",
@@ -12,16 +13,15 @@
             new QueryBuilderRule { Label="Title", Field="Title", Type="string", Operator="equal", Value = "Sales Manager" }
         }
     };
-    ViewBag.rule = rule;
-    ViewBag.dataSource = EmployeeView.GetAllRecords();
+    var dataSource = EmployeeView.GetAllRecords();
 }
 
 <div class="text-center">
-    <ejs-querybuilder id="querybuilder" width="73%" rule="ViewBag.rule" dataSource="ViewBag.dataSource">
+    <ejs-querybuilder id="querybuilder" width="73%" rule="rule" dataSource="dataSource">
         <e-querybuilder-columns>
             <e-querybuilder-column field="EmployeeID" label="Employee ID" type="number"></e-querybuilder-column>
             <e-querybuilder-column field="FirstName" label="First Name" type="string"></e-querybuilder-column>
-            <e-querybuilder-column field="TitleOfCourtesy" label="Title Of Courtesy" type="boolean" values="ViewBag.values"></e-querybuilder-column>
+            <e-querybuilder-column field="TitleOfCourtesy" label="Title Of Courtesy" type="boolean" values="values"></e-querybuilder-column>
             <e-querybuilder-column field="Title" label="Title" type="string"></e-querybuilder-column>
             <e-querybuilder-column field="HireDate" label="Hire Date" type="date" format="dd/MM/yyyy"></e-querybuilder-column>
             <e-querybuilder-column field="Country" label="Country" type="string"></e-querybuilder-column>
