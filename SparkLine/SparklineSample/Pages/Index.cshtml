@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var data = DataSource.GetData();
+}
+
+<div class="text-center">
+    <div class="spark" align="center">
+        <ejs-sparkline id="sparkline" loaded="loaded" type="Area" height="100px" width="70%" dataSource="data" xName="xval" yName="yval">
+            <e-sparkline-tooltipsettings visible="true" format="${xval} : ${yval}"></e-sparkline-tooltipsettings>
+        </ejs-sparkline>
+    </div>
+    <style>
+        .spark {
+            border: 1px solid rgb(209, 209, 209);
+            border-radius: 2px;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script>
+        function loaded(args)
+        { 
+            window.sparkline = args.sparkline;
+            args.sparkline.loaded = null;
+            args.sparkline.refresh();
+        }
+    </script>
+</div>
