@@ -1,0 +1,48 @@
+﻿
+
+
+ <h3>Todo List</h3>
+
+ <div class="form-group">
+     <ejs-textbox id="text" placeholder="Add new item" change="onchange" width="20%"></ejs-textbox>
+
+    <ejs-button id="add" content="Add"></ejs-button>
+ </div>
+
+
+ <ejs-listview id="list" width="40%">
+        <e-listview-fieldsettings text="text"></e-listview-fieldsettings>
+ </ejs-listview>
+
+ <script>
+    var data;
+    var flag = true;
+    function onchange(e) {
+        data = {
+            text: e.value,
+            id: (Math.random() * 1000).toFixed(0).toString(),
+        }
+    }
+    document.getElementById("add").addEventListener("click", function (e) {
+        var listviewInstance = document.getElementById("list").ej2_instances[0];
+        if (data.text != "") {
+          listviewInstance.addItem([data]);
+          document.getElementById("text").value = ""
+          if (flag)
+          {
+             listviewInstance.element.style.display = "block";
+             flag = false;
+           }
+        }
+    });
+
+ </script>
+
+ <style>
+     #list {
+         display: none;
+     }
+     .form-group {
+         padding-bottom: 20px;
+     }
+ </style>
