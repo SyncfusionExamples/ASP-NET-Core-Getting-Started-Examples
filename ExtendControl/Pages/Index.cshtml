@@ -1,0 +1,13 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+ <SyncButton Content="Primary" IsPrimary="true" Disabled="true"></SyncButton>
+ <SyncButton Content="Success" Styles="@ASPCore.Pages.SyncButton.ButtonStyles.Success"></SyncButton>
+ <SyncButton Content="Info" Styles="@ASPCore.Pages.SyncButton.ButtonStyles.Info"></SyncButton>
+ <SyncButton Content="Warning" Styles="@ASPCore.Pages.SyncButton.ButtonStyles.Warning"></SyncButton>
+ <SyncButton Content="Danger" Styles="@ASPCore.Pages.SyncButton.ButtonStyles.Danger"></SyncButton>
