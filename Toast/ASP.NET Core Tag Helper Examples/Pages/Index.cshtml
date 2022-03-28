@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <ejs-toast id="element" title="Matt sent you a friend request" content="You have a new friend request yet to accept">
+    </ejs-toast>
+    <script type="text/javascript">
+        setTimeout(
+            () => {
+                var toastObj = document.getElementById('element').ej2_instances[0];
+                toastObj.target = document.body;
+                toastObj.show();
+            }, 1000);
+    </script>
+</div>
