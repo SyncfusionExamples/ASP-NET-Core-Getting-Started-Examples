@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var data = new string[] { "Badminton", "Basketball", "Cricket", "Football", "Golf", "Gymnastics", "Hockey", "Tennis" };
+}
+
+<div class="text-center">
+    <ejs-toolbar id="default">
+        <e-toolbar-items>
+            <e-content-template>
+                <div>
+                    <div> <ejs-button id="btn" content="Click" isPrimary="true"></ejs-button></div>
+                    <div class='e-separator'> </div>
+                    <div> <ejs-maskedtextbox id="mask1" mask="345-678-4673"></ejs-maskedtextbox> </div>
+                    <div class='e-separator'> </div>
+                    <div>  <ejs-radiobutton id="radio1" label="Credit/Debit Card" name="payment" value="credit/debit"></ejs-radiobutton> </div>
+                    <div class='e-separator'> </div>
+                    <div>
+                        <ejs-dropdownlist id="games" dataSource="@data" placeholder="Select a game" index="2" popupHeight="220px" />
+                    </div>
+                </div>
+            </e-content-template>
+        </e-toolbar-items>
+    </ejs-toolbar>
+    <style>
+        .separator {
+            width: 10px;
+        }
+    </style>
+</div>

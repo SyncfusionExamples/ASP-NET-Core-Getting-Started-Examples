@@ -1,0 +1,59 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <ejs-tooltip id="details" position="RightCenter" target=".e-info">
+		<e-content-template>
+			<form id="details" role="form">
+				<table>
+					<tr>
+						<td class="info"> User Name:</td>
+						<td> <input type="text" class="e-info" name="firstname" title="Please enter your name"> </td>
+					</tr>
+					<tr>
+						<td class="info"> Email Address:</td>
+						<td> <input type="text" class="e-info" name="email" title="Enter a valid email address"></td>
+					</tr>
+					<tr>
+						<td class="info"> Password:</td>
+						<td> <input type="password" class="e-info" name="password" title="Be at least 8 characters length"></td>
+					</tr>
+					<tr>
+						<td class="info"> Confirm Password:</td>
+						<td> <input type="password" class="e-info" name="Cpwd" title="Re-enter your password"></td>
+					</tr>
+				</table>
+				<input id="sample" type="submit" value="Submit">
+				<input id="clear" type="reset" value="Reset">
+			</form>
+		</e-content-template>
+	</ejs-tooltip>
+
+	<style>
+		#container {
+			visibility: hidden;
+		}
+
+		#loader {
+			color: #008cff;
+			height: 40px;
+			left: 45%;
+			position: absolute;
+			top: 45%;
+			width: 30%;
+		}
+
+		#details table th, #details table td {
+			padding: 15px;
+			text-align: left;
+		}
+
+		#details .info {
+			font-weight: bold;
+		}
+ 
+	</style>
+</div>

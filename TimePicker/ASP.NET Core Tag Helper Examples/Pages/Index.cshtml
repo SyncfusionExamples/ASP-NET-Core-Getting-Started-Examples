@@ -1,0 +1,12 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var minVal = new DateTime(2022, 05, 07, 1, 00, 00);
+    var maxVal = new DateTime(2022, 05, 07, 11, 00, 00);
+    var value = new DateTime(2022, 05, 07, 4, 00, 00);
+}
+
+<div class="text-center">
+    <ejs-timepicker id="timepicker" format="HH:mm" step="60" value="value"></ejs-timepicker>
+</div>

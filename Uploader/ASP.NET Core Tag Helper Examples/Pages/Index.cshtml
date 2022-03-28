@@ -1,0 +1,20 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var asyncSettings = new Syncfusion.EJ2.Inputs.UploaderAsyncSettings { SaveUrl = "https://ej2.syncfusion.com/services/api/uploadbox/Save", RemoveUrl = "https://ej2.syncfusion.com/services/api/uploadbox/Remove" };
+}
+
+<div class="text-center">
+    <ejs-uploader id="uploadFiles" asyncSettings="@asyncSettings" success="onUploadSuccess" failure="onUploadFailure" autoUpload="false"></ejs-uploader>
+    <script>
+        function onUploadSuccess(args) {
+            if (args.operation === 'upload') {
+                console.log('success');
+            }
+        }
+        function onUploadFailure(args) {
+            console.log('failed');
+        }
+    </script>
+</div>
