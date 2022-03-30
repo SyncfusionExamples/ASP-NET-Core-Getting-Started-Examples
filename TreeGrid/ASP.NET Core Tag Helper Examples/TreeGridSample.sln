@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeGridSample", "TreeGridSample.csproj", "{0B01FD5C-3E71-413E-ACF1-6E9A8BE5D09D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B01FD5C-3E71-413E-ACF1-6E9A8BE5D09D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B01FD5C-3E71-413E-ACF1-6E9A8BE5D09D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B01FD5C-3E71-413E-ACF1-6E9A8BE5D09D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B01FD5C-3E71-413E-ACF1-6E9A8BE5D09D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11C0689D-CAA7-4BFE-A7A7-9FC7E69ED4DB}
+	EndGlobalSection
+EndGlobal
