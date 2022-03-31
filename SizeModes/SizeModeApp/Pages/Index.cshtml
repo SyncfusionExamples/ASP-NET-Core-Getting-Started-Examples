@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<p> Size-modes for application </p>
+<p> This demo shows the Size-Modes applied for an entire application </p>
+
+<button id="touch">Touch Mode</button>
+<button id="mouse">Mouse Mode</button>
+
+<div>
+<ejs-calendar id="calendar"></ejs-calendar>
+</div>
+
+<div>
+<ejs-button id="element" content="Button"></ejs-button>
+</div>
+
+<div>
+    <ejs-checkbox id="default" label="Checked" checked="true"></ejs-checkbox>
+</div>
+
+<script>
+    document.getElementById("touch").addEventListener("click", function () {
+        document.body.classList.add('e-bigger');
+    });
+
+    document.getElementById("mouse").addEventListener("click", function () {
+        document.body.classList.remove('e-bigger');
+    });
+</script>

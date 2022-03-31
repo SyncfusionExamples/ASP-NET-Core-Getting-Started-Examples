@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div id="fade"></div>
+<div id="zoom"></div>
+
+<script>
+    var animation = new ej.base.Animation({ duration: 5000 });
+    animation.animate('#fade', { name: 'FadeOut' });
+    animation.animate('#zoom', { name: 'ZoomOut' });
+</script>
+    
+<style>
+    #fade, #zoom {
+        background: #333333;
+        border: 1px solid #cecece;
+        box-sizing: border-box;
+        float: left;
+        height: 100px;
+        width: 100px;
+    }
+</style>
+
