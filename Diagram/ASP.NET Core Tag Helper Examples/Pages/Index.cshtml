@@ -1,0 +1,26 @@
+﻿@page
+@using Syncfusion.EJ2
+@using Syncfusion.EJ2.Diagrams
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <ejs-diagram id="container" width="100%" height="700px">
+        <e-diagram-nodes>
+            <e-diagram-node id='node1' offsetX="100" offsetY="100" width="100" height="100" borderWidth="2">
+                <e-node-style fill="darkcyan">
+                </e-node-style>
+            </e-diagram-node>
+            <e-diagram-node id='node2' offsetX="300" offsetY="100" width="100" height="100" borderWidth="2">
+                <e-node-style fill="darkcyan">
+                </e-node-style>
+            </e-diagram-node>
+        </e-diagram-nodes>
+        <e-diagram-connectors>
+            <e-diagram-connector id="connector1" sourceID="node1" targetID="node2">
+            </e-diagram-connector>
+        </e-diagram-connectors>
+    </ejs-diagram>
+</div>
