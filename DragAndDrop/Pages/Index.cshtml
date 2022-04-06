@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h2>Initializing custom Drag and Drop element</h2>
+
+<div id="droppable"><p class="drop"><span>Drop Target </span></p></div>
+<div id="drag-element"><p class="drag-text">Drag </p></div>
+
+<script>
+    var draggable = new ej.base.Draggable(document.getElementById('drag-element'), {clone: false});
+    var droppable = new ej.base.Droppable(document.getElementById('droppable'), {
+        drop: (function (e) {
+        e.droppedElement.querySelector('.drag-text').textContent = 'Dropped';
+        })
+    });
+</script>
+
+<style>
+    #drag-element {
+        height: 100px;
+        width: 150px;
+        border: 1px solid #cecece;
+        cursor: move;
+        background: #cdffe3;
+        user-select: none;
+        touch-action: none;
+    }
+        
+    #droppable {
+        margin: 5px;
+        line-height: 170px;
+        font-size: 14px;
+        width: 250px;
+        border: 1px solid #cecece;
+        background: #f6f6f6;
+        touch-action: none;
+    }
+        
+    .drop,.drag-text {
+        padding-top: 23px;
+        text-align: center;
+        margin: 14px 0px 14px 0px;
+    }
+</style>
