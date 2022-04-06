@@ -1,0 +1,10 @@
+﻿@page "{handler?}"
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <ejs-pdfviewer id="pdfviewer" style="height:600px" serviceUrl="/Index" documentPath="Files/PDF_Succinctly.pdf">
+    </ejs-pdfviewer>
+</div>
