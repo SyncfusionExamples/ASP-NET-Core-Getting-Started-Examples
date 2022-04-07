@@ -1,0 +1,29 @@
+﻿@page
+@using Newtonsoft.Json
+@using Syncfusion.EJ2.Maps
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var propertyPath = new[] { "name" };
+    var colormapping = new List<Syncfusion.EJ2.Maps.MapsColorMapping> {
+        new MapsColorMapping{ Color = "#EDB46F", Value= "Permanent"  },
+        new MapsColorMapping { Color= "#F1931B", Value = "Non-Permanent" }
+    };
+    string allText = System.IO.File.ReadAllText("wwwroot/scripts/MapsData/WorldMap.json");
+    var mapUSData=JsonConvert.DeserializeObject(allText);
+    string allText1 = System.IO.File.ReadAllText("wwwroot/scripts/MapsData/electiondata.json");
+    var electionData = JsonConvert.DeserializeObject(allText1);
+}
+
+<div class="text-center">
+    <ejs-maps id="maps">
+        <e-maps-legendsettings visible="true" position="Top"></e-maps-legendsettings>
+        <e-maps-layers>
+            <e-maps-layer dataSource="electionData" shapeData="mapUSData" shapeDataPath="Country" shapePropertyPath="propertyPath">
+                <e-layersettings-shapesettings colorValuePath="Membership" fill="#E5E5E5" colorMapping="colormapping"></e-layersettings-shapesettings>
+                <e-layersettings-datalabelsettings visible="true" labelPath="name" smartLabelMode="@Syncfusion.EJ2.Maps.SmartLabelMode.Trim"></e-layersettings-datalabelsettings>
+                <e-layersettings-tooltipsettings visible="true" valuePath="name"></e-layersettings-tooltipsettings>
+            </e-maps-layer>
+        </e-maps-layers>
+    </ejs-maps>
+</div>
