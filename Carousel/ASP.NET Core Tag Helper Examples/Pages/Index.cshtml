@@ -1,0 +1,79 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <div class="col-lg-12 control-section default-carousel-section">
+        <div class="e-sample-resize-container carousel-sample">
+            <ejs-carousel id="defaultCarousel" cssClass="default-carousel">
+                <e-carousel-items>
+                    <e-carousel-item template="#templateItem1"></e-carousel-item>
+                    <e-carousel-item template="#templateItem2"></e-carousel-item>
+                    <e-carousel-item template="#templateItem3"></e-carousel-item>
+                    <e-carousel-item template="#templateItem4"></e-carousel-item>
+                    <e-carousel-item template="#templateItem5"></e-carousel-item>
+                </e-carousel-items>
+            </ejs-carousel>
+        </div>
+    </div>
+
+    <style>
+        .default-carousel-section .carousel-sample {
+            margin: 0 auto 2em;
+            max-width: 500px;
+            height: 300px;
+        }
+
+        .default-carousel .e-carousel-items .e-carousel-item .img-container {
+            height: 100%;
+        }
+
+        .default-carousel .e-carousel-items .e-carousel-item .img-caption {
+            bottom: 4em;
+            color: #fff;
+            font-size: 12pt;
+            height: 2em;
+            position: relative;
+            padding: 0.3em 1em;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+
+    <script id="templateItem1" type="text/x-template">
+        <figure class="img-container">
+            <img src="css/carousel/images/bridge.jpg" alt="bridge" style="height:100%; width: 100%" />
+            <figcaption class="img-caption">Golden Gate Bridge, San Francisco</figcaption>
+        </figure>
+    </script>
+
+    <script id="templateItem2" type="text/x-template">
+        <figure class="img-container">
+            <img src="css/carousel/images/trees.jpg" alt="spring_trees" style="height:100%; width: 100%" />
+            <figcaption class="img-caption">Spring Flower Trees</figcaption>
+        </figure>
+    </script>
+
+    <script id="templateItem3" type="text/x-template">
+        <figure class="img-container">
+            <img src="css/carousel/images/waterfall.jpg" alt="waterfall" style="height:100%; width: 100%" />
+            <figcaption class="img-caption">Oddadalen Waterfalls, Norway</figcaption>
+        </figure>
+    </script>
+
+    <script id="templateItem4" type="text/x-template">
+        <figure class="img-container">
+            <img src="css/carousel/images/sea.jpg" alt="sea" style="height:100%; width: 100%" />
+            <figcaption class="img-caption">Anse Source d'Argent, Seychelles</figcaption>
+        </figure>
+    </script>
+
+    <script id="templateItem5" type="text/x-template">
+        <figure class="img-container">
+            <img src="css/carousel/images/rocks.jpeg" alt="rocks" style="height:100%; width: 100%" />
+            <figcaption class="img-caption">Stonehenge, England</figcaption>
+        </figure>
+    </script>
+</div>

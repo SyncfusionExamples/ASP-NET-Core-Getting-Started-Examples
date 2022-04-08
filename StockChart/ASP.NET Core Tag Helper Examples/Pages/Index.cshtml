@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <ejs-stockchart id="stockchart" load="stockload">
+        <e-stockchart-series-collection>
+            <e-stockchart-series type='Candle' xName='x' name='Apple'> </e-stockchart-series>
+        </e-stockchart-series-collection>
+    </ejs-stockchart>
+
+    <script src="~/chart/financial-data.js"></script>
+    <script>
+        var data = chartData;
+        function stockload(args) {
+            args.stockChart.series[0].dataSource = data;
+
+        }
+    </script>
+</div>
