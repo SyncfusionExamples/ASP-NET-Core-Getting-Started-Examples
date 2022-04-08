@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+
+    <div id='element'>
+        <span class="e-avatar e-avatar-xlarge"></span>
+        <span class="e-avatar e-avatar-large"></span>
+        <span class="e-avatar"></span>
+        <span class="e-avatar e-avatar-small"></span>
+        <span class="e-avatar e-avatar-xsmall"></span>
+    </div>
+
+    <style>
+    #element {
+        display: block;
+        width: 300px;
+        margin: 130px auto;
+        border-radius: 3px;
+        justify-content: center;
+    }
+
+    .e-avatar {
+        background-image: url(@Url.Content("~/css/avatar/images/pic01.png"));
+        margin: 2px;
+    }
+    </style>
+</div>
