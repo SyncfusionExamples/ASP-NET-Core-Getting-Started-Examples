@@ -193,45 +193,54 @@ namespace PDFViewerSample.Pages
     }
     public class jsonObjects
     {
-
-        public string document { get; set; }
+                public string document { get; set; }
         public string password { get; set; }
-        public int zoomFactor { get; set; }
-        public bool isFileName { get; set; }
-        public int xCoordinate { get; set; }
-        public int yCoordinate { get; set; }
-        public int pageNumber { get; set; }
-        public int tileXcount { get; set; }
-        public int tileYcount { get; set; }
-        public string extraText { get; set; }
+        public string zoomFactor { get; set; }
+        public string isFileName { get; set; }
+        public string xCoordinate { get; set; }
+        public string yCoordinate { get; set; }
+        public string pageNumber { get; set; }
         public string documentId { get; set; }
         public string hashId { get; set; }
-        public float sizeX { get; set; }
-        public float sizeY { get; set; }
-        public int startPage { get; set; }
-        public int endPage { get; set; }
+        public string sizeX { get; set; }
+        public string sizeY { get; set; }
+        public string startPage { get; set; }
+        public string endPage { get; set; }
         public string stampAnnotations { get; set; }
         public string textMarkupAnnotations { get; set; }
         public string stickyNotesAnnotation { get; set; }
         public string shapeAnnotations { get; set; }
         public string measureShapeAnnotations { get; set; }
         public string action { get; set; }
-        public int pageStartIndex { get; set; }
-        public int pageEndIndex { get; set; }
+        public string pageStartIndex { get; set; }
+        public string pageEndIndex { get; set; }
         public string fileName { get; set; }
         public string elementId { get; set; }
         public string pdfAnnotation { get; set; }
         public string importPageList { get; set; }
-        public string annotationDataFormat { get; set; }
         public string uniqueId { get; set; }
         public string data { get; set; }
-        public float viwePortWidth { get; set; }
-        public float viewportHeight { get; set; }
-        public int tilecount { get; set; }
+        public string viewPortWidth { get; set; }
+        public string viewportHeight { get; set; }
+        public string tilecount { get; set; }
         public bool isCompletePageSizeNotReceived { get; set; }
         public string freeTextAnnotation { get; set; }
         public string signatureData { get; set; }
         public string fieldsData { get; set; }
+        public string FormDesigner { get; set; }
+        public string inkSignatureData { get; set; }
+        public bool hideEmptyDigitalSignatureFields { get; set; }
+        public bool showDigitalSignatureAppearance { get; set; }
+        public bool digitalSignaturePresent { get; set; }
+        public string tileXCount { get; set; }
+        public string tileYCount { get; set; }
+        public string digitalSignaturePageList { get; set; }
+        public string annotationCollection { get; set; }
+        public string annotationsPageList { get; set; }
+        public string formFieldsPageList { get; set; }
+        public string isAnnotationsExist { get; set; }
+        public string isFormFieldAnnotationsExist { get; set; }
         public string documentLiveCount { get; set; }
+        public string annotationDataFormat { get; set; }
     }
 }
