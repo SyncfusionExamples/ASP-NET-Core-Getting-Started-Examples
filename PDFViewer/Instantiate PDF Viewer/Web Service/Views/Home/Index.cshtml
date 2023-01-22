@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div style="width:100%;height:600px">
+    <button id="load1">Load</button>
+    <ejs-pdfviewer id="pdfViewer" style="height:600px" serviceUrl="https://localhost:44327/pdfviewer" documentPath="HTTP Succinctly.pdf">
+    </ejs-pdfviewer>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+  <input type="submit" value="Generate PDF" class="Button" id="btn1" />
+  <script type="text/javascript">
+    $("load1").click(function () {
+      $.ajax({
+        url: 'https://localhost:44327/pdfviewer/GetPdfStream',
+        type: "GET",
+        success: function (data) {
+          viewer = document.getElementById('pdfViewer').ej2_instances[0];
+          viewer.documentPath = data;
+        }
+      });
+    });
+  </script>
+
+
+
+
+
+@*<script>
+     document.getElementById("load1").addEventListener('click', function () {
+      $.ajax({
+            url: "https://localhost:44327/pdfviewer",
+        type: "GET",
+        success: function(data){
+          var viewer = new ej.pdfviewer.PdfViewer({
+            documentPath : "PDF_Succinctly.pdf",
+                    serviceUrl: "https://localhost:44327/pdfviewer",
+          });
+          viewer.appendTo("#pdfViewer");
+        }
+      });
+    });
+
+</script>*@

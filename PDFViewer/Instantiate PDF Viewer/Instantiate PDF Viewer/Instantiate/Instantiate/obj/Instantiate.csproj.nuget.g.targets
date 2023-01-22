@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)system.text.json\6.0.0\build\System.Text.Json.targets" Condition="Exists('$(NuGetPackageRoot)system.text.json\6.0.0\build\System.Text.Json.targets')" />
+    <Import Project="$(NuGetPackageRoot)syncfusion.ej2.pdfviewer.aspnet.core.windows\20.4.0.44\build\net6.0\Syncfusion.EJ2.PdfViewer.AspNet.Core.Windows.targets" Condition="Exists('$(NuGetPackageRoot)syncfusion.ej2.pdfviewer.aspnet.core.windows\20.4.0.44\build\net6.0\Syncfusion.EJ2.PdfViewer.AspNet.Core.Windows.targets')" />
+  </ImportGroup>
+</Project>

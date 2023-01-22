@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@*@using System.IO;
+@using System;
+*@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div style="width:100%;height:600px">
+    <button id="loadPDF">Load PDF Viewer</button>
+    <button id="loadPDF document">Load PDF document</button>
+    <div id="pdfViewer" style="height: 100%;width: 100%;"></div>
+</div>
+
+<script>
+    document.getElementById("loadPDF").addEventListener('click', function () {
+        $.ajax({
+            url: "https://localhost:44327/pdfviewer",
+            type: "GET",
+            success: function (data) {
+                var viewer = new ej.pdfviewer.PdfViewer({
+                    serviceUrl: "https://localhost:44327/pdfviewer",
+                });
+                viewer.appendTo("#pdfViewer");
+            }
+        });
+    });
+    document.getElementById("loadPDF document").addEventListener('click', function () {
+        $.ajax({
+            url: "https://localhost:44327/pdfviewer/GetPdfStream",
+            type: "GET",
+            success: function (data) {
+                viewer = document.getElementById('pdfViewer').ej2_instances[0];
+                viewer.documentPath = data;
+            }
+        });
+    });
+</script>
