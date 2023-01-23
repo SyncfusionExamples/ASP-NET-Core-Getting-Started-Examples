@@ -14,15 +14,19 @@
 </div>
 
 <script>
+    var id = 0;
     document.getElementById("loadPDF").addEventListener('click', function () {
         $.ajax({
             url: "https://localhost:44327/pdfviewer",
             type: "GET",
             success: function (data) {
-                var viewer = new ej.pdfviewer.PdfViewer({
-                    serviceUrl: "https://localhost:44327/pdfviewer",
-                });
-                viewer.appendTo("#pdfViewer");
+                if(id == 0){
+                    var viewer = new ej.pdfviewer.PdfViewer({
+                        serviceUrl: "https://localhost:44327/pdfviewer",
+                    });
+                    viewer.appendTo("#pdfViewer");
+                    id = 1;
+                }
             }
         });
     });
