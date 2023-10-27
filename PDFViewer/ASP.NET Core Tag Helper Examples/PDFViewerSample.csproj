@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Syncfusion.EJ2.AspNet.Core" Version="*" />
-    <PackageReference Include="Syncfusion.EJ2.PdfViewer.AspNet.Core.Windows" Version="*" />
+    <PackageReference Include="Syncfusion.EJ2.PdfViewer.AspNet.Core" Version="*" />
   </ItemGroup>
 
 </Project>
