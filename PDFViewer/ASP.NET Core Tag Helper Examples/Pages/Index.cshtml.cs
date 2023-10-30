@@ -4,6 +4,7 @@ using Syncfusion.EJ2.PdfViewer;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Reflection;
+using System.Net;
 
 namespace PDFViewerSample.Pages
 {
@@ -38,7 +39,15 @@ namespace PDFViewerSample.Pages
                     }
                     else
                     {
-                        return this.Content(jsonObject["document"] + " is not found");
+                        string fileName = jsonObject["document"].Split(new string[] { "://" }, StringSplitOptions.None)[0];
+                        if (fileName == "http" || fileName == "https")
+                        {
+                            WebClient WebClient = new WebClient();
+                            byte[] pdfDoc = WebClient.DownloadData(jsonObject["document"]);
+                            stream = new MemoryStream(pdfDoc);
+                        }
+                        else
+                            return this.Content(jsonObject["document"] + " is not found");
                     }
                 }
                 else
@@ -50,6 +59,7 @@ namespace PDFViewerSample.Pages
             jsonResult = pdfviewer.Load(stream, jsonObject);
             return Content(JsonConvert.SerializeObject(jsonResult));
         }
+
         public Dictionary<string, string> JsonConverterstring(jsonObjects results)
         {
             Dictionary<string, object> resultObjects = new Dictionary<string, object>();
@@ -61,6 +71,7 @@ namespace PDFViewerSample.Pages
             Dictionary<string, string> jsonResult = emptyObjects.ToDictionary(k => k.Key, k => k.Value.ToString());
             return jsonResult;
         }
+
         //Post action for processing the PDF documents.
         public IActionResult OnPostRenderPdfPages([FromBody] jsonObjects responseData)
         {
@@ -69,6 +80,7 @@ namespace PDFViewerSample.Pages
             object jsonResult = pdfviewer.GetPage(jsonObject);
             return Content(JsonConvert.SerializeObject(jsonResult));
         }
+
         //Post action for unloading and disposing the PDF document resources
         public IActionResult OnPostUnload([FromBody] jsonObjects responseData)
         {
@@ -77,6 +89,7 @@ namespace PDFViewerSample.Pages
             pdfviewer.ClearCache(jsonObject);
             return this.Content("Document cache is cleared");
         }
+
         //Post action for rendering the ThumbnailImages
         public IActionResult OnPostRenderThumbnailImages([FromBody] jsonObjects responseData)
         {
@@ -85,6 +98,7 @@ namespace PDFViewerSample.Pages
             object result = pdfviewer.GetThumbnailImages(jsonObject);
             return Content(JsonConvert.SerializeObject(result));
         }
+
         //Post action for processing the bookmarks from the PDF documents
         public IActionResult OnPostBookmarks([FromBody] jsonObjects responseData)
         {
@@ -93,6 +107,7 @@ namespace PDFViewerSample.Pages
             object jsonResult = pdfviewer.GetBookmarks(jsonObject);
             return Content(JsonConvert.SerializeObject(jsonResult));
         }
+
         //Post action for rendering the annotation comments
         public IActionResult OnPostRenderAnnotationComments([FromBody] jsonObjects responseData)
         {
@@ -101,8 +116,8 @@ namespace PDFViewerSample.Pages
             object jsonResult = pdfviewer.GetAnnotationComments(jsonObject);
             return Content(JsonConvert.SerializeObject(jsonResult));
         }
-        //Post action for exporting the annotations
 
+        //Post action for exporting the annotations
         public IActionResult OnPostExportAnnotations([FromBody] jsonObjects responseData)
         {
             PdfRenderer pdfviewer = new PdfRenderer(_cache);
@@ -110,6 +125,7 @@ namespace PDFViewerSample.Pages
             string jsonResult = pdfviewer.ExportAnnotation(jsonObject);
             return Content(jsonResult);
         }
+
         //Post action for importing the annotations
         public IActionResult OnPostImportAnnotations([FromBody] jsonObjects responseData)
         {
@@ -153,9 +169,9 @@ namespace PDFViewerSample.Pages
                     }
                 }
             }
-
             return Content(jsonResult);
         }
+
         //Post action for downloading the PDF documents
         public IActionResult OnPostDownload([FromBody] jsonObjects responseData)
         {
@@ -164,6 +180,7 @@ namespace PDFViewerSample.Pages
             string documentBase = pdfviewer.GetDocumentAsBase64(jsonObject);
             return Content(documentBase);
         }
+
         //Post action for printing the PDF documents
         public IActionResult OnPostPrintImages([FromBody] jsonObjects responseData)
         {
@@ -172,6 +189,7 @@ namespace PDFViewerSample.Pages
             object pageImage = pdfviewer.GetPrintImage(jsonObject);
             return Content(JsonConvert.SerializeObject(pageImage));
         }
+
         //Gets the path of the PDF document
         private string GetDocumentPath(string document)
         {
@@ -180,7 +198,7 @@ namespace PDFViewerSample.Pages
             {
                 string basePath = _hostingEnvironment.WebRootPath;
                 string dataPath = string.Empty;
-                dataPath = basePath + "\\";
+                dataPath = basePath + "/";
                 if (System.IO.File.Exists(dataPath + (document)))
                     documentPath = dataPath + document;
             }
@@ -191,6 +209,7 @@ namespace PDFViewerSample.Pages
             return documentPath;
         }
     }
+
     public class jsonObjects
     {
         public string document { get; set; }
@@ -242,6 +261,6 @@ namespace PDFViewerSample.Pages
         public bool isFormFieldAnnotationsExist { get; set; }
         public string documentLiveCount { get; set; }
         public string annotationDataFormat { get; set; }
-	public string importedData { get; set; }
+        public string importedData { get; set; }
     }
 }
