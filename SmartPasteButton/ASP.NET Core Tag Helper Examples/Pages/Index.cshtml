@@ -1,0 +1,57 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Contact Form</h1>
+<form action="/submit" method="post">
+    <div class="mb-2">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-2">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-2">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" id="phone" name="phone">
+    </div>
+    <div class="mb-2">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+    </div>
+    <div class="mb-2 form-check">
+        <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter" checked>
+        <label class="form-check-label" for="newsletter">Subscribe to newsletter</label>
+    </div>
+    <div class="mb-2">
+        <label class="form-label">Preferred Contact Method</label>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="email-contact" name="contact" value="email">
+            <label class="form-check-label" for="email-contact">Email</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="phone-contact" name="contact" value="phone">
+            <label class="form-check-label" for="phone-contact">Phone</label>
+        </div>
+    </div>
+    <div class="mb-2">
+        <label for="country" class="form-label">Country</label>
+        <select class="form-select" id="country" name="country">
+            <option value="">Select Country</option>
+            <option value="United States">United States</option>
+            <option value="Canada">Canada</option>
+            <option value="United Kingdom">United Kingdom</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-secondary">Reset</button>
+    <ejs-smartpaste id="smartPasteBtn" content="Smart Paste" cssClass="e-primary" iconCss="e-icons e-paste"></ejs-smartpaste>
+</form>
+
+<br />
+<div>
+    I am John Doe from the United States. My email is johndoe@example.com, and my phone number is 555-123-4567. I’d like to inquire about your services and have a detailed discussion regarding your product offerings. Please contact me via email. I’m happy to subscribe to your newsletter for updates. Thank you!
+</div>
